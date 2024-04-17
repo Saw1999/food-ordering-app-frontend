@@ -21,6 +21,7 @@ export const AuthZeroProvider = ({children} : props) => {
 
     const onRedirectCallback = (appState?: AppState, user?: User) =>{
         console.log("User: ", user);
+        console.log("Appstate :", appState);
         
         navigate('/auth-callback');
         
