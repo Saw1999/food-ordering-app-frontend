@@ -41,7 +41,7 @@ export const UserProfileForm = ({onSave, isLoading, userData}: props) => {
         <Form {...form}>
             <form 
             onSubmit={form.handleSubmit(onSave)}
-            className="bg-gray-50 space-y-4 rounded-lg p-6 md:p-10 text-blue-900 "
+            className="bg-gray-50 space-y-4 rounded-lg p-6 md:p-10 text-blue-900"
             >
                 <div>
                     <h2 className="font-bold text-xl md:text-2xl mb-1">User Profile</h2>

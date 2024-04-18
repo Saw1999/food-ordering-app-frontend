@@ -10,6 +10,7 @@ import { AuthCallBack } from './pages/AuthCallback'
 import { UserProfile } from './pages/UserProfile'
 import { Toaster } from 'sonner'
 import { ProtectedRoute } from './auth/ProtectedRoute'
+import { ManageRestaurant } from './pages/ManageRestaurant'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             
             <Route element={<ProtectedRoute />}>
               <Route path='/user-profile' element={<Layout><UserProfile /></Layout>} />
+              <Route path='/manage-restaurant' element={<Layout><ManageRestaurant /></Layout>} />
             </Route>
            
           </Routes>
