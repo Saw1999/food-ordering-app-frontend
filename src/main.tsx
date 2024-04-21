@@ -12,6 +12,7 @@ import { Toaster } from 'sonner'
 import { ProtectedRoute } from './auth/ProtectedRoute'
 import { ManageRestaurant } from './pages/ManageRestaurant'
 import { Search } from './pages/Search'
+import { RestaurantDetails } from './pages/RestaurantDetails'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path='/' element={<Layout showHero><Home /></Layout>} />
             <Route path='/auth-callback' element={<AuthCallBack />} />
             <Route path='/search/:city' element={<Layout showHero={false}><Search /></Layout>} />
+            <Route path='/details/:restaurantId' element={<Layout showHero={false}><RestaurantDetails /></Layout>} />
             
             <Route element={<ProtectedRoute />}>
               <Route path='/user-profile' element={<Layout><UserProfile /></Layout>} />

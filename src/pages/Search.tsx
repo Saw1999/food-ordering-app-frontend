@@ -71,7 +71,7 @@ export const Search = () => {
   };
 
   if(isLoading){
-    <span>...Loading</span>
+    return <span>...Loading</span>
   }
 
   if(!searchResults?.data || !city){
