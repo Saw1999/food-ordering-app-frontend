@@ -15,7 +15,7 @@ export const OrderSummary = ({restaurant, cartItems, removeFromCart}: Props) => 
     const getTotalCost = () => {
         const totalCost = cartItems.reduce((total, cartItem) => total + (cartItem.price * cartItem.quantity), 0);
 
-        const totalWithDeliFee = totalCost + restaurant.deliFee
+        const totalWithDeliFee = ((totalCost + restaurant.deliFee) /100 ).toFixed(2);
 
         return totalWithDeliFee
     };
@@ -40,7 +40,7 @@ export const OrderSummary = ({restaurant, cartItems, removeFromCart}: Props) => 
                     </span>
                     <span className="flex gap-2 items-center">
                         <Trash className="cursor-pointer text-slate-400" size={15} onClick={() => removeFromCart(cartItem)}/>
-                        ${cartItem.price * cartItem.quantity}
+                        ${((cartItem.price * cartItem.quantity)/100).toFixed(2)}
                     </span>
                 </div>
             ))}
@@ -49,7 +49,7 @@ export const OrderSummary = ({restaurant, cartItems, removeFromCart}: Props) => 
 
             <div className="flex justify-between">
                 <span>Delivery</span>
-                <span>${restaurant.deliFee}</span>
+                <span>${(restaurant.deliFee / 100).toFixed(2)}</span>
             </div>
 
             <Separator />

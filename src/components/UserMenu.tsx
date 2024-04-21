@@ -8,6 +8,11 @@ import { Button } from "./ui/button"
 
 export const UserMenu = () => {
   const {user, logout} = useAuth0();
+
+  const handleGoBack = () => {
+    window.history.back();
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="px-3 font-bold text-blue-900 flex items-center gap-2">
@@ -18,11 +23,19 @@ export const UserMenu = () => {
       <DropdownMenuContent>
 
         <DropdownMenuItem>
+          <Link to="/" className="font-bold text-blue-900 hover:text-slate-600">Home</Link>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem>
           <Link to="/manage-restaurant" className="font-bold text-blue-900 hover:text-slate-600">Manage Restaurant</Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem>
           <Link to="/user-profile" className="font-bold text-blue-900 hover:text-slate-600">Profile</Link>
+        </DropdownMenuItem>
+        
+        <DropdownMenuItem>
+          <span className="font-bold text-blue-900 hover:text-slate-600 cursor-pointer" onClick={handleGoBack}>Go back</span>
         </DropdownMenuItem>
 
         <Separator />
